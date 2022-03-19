@@ -23,14 +23,21 @@ float divide(float a, float b)
 
 int main()
 {
-  std::string x = "";
+  int x = 0;
   float a = 0, b = 0;
-  std::cout << "Welcome to my first calculator!\n";
+  std::cout << "Welcome to my first calculator!\n\n";
   while(true)
   {
     std::cout << "Enter 1 to end program\nEnter 2 to sum up\nEnter 3 to subtract\nEnter 4 to multiply\nEnter 5 to divide\n";
     std::cin >> x;
-    if(x == "1")
+    while(!std::cin.good())
+    {
+      std::cin.clear();
+      std::cin.sync();
+      std::cout << "ERROR: Invalid data type\nEnter option again: ";
+      std::cin >> x;
+    }
+    if(x == 1)
     {
       return 0;
     }
@@ -54,16 +61,16 @@ int main()
     }
     switch(x)
     {
-      case "2":
+      case 2:
         add(a, b);
         break;
-      case "3":
+      case 3:
         subtract(a, b);
         break;
-      case "4":
+      case 4:
         multiply(a, b);
         break;
-      case "5":
+      case 5:
         divide(a, b);
         break;
     }
