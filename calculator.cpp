@@ -23,19 +23,20 @@ float divide(float a, float b)
 
 int main()
 {
-  int x = 0;
+  int x = 0, y = 0;
   float a = 0, b = 0;
   std::cout << "Welcome to my first calculator!\n\n";
-  while(true)
-  {
+  //while(true)
+  //{
     std::cout << "Enter 1 to end program\nEnter 2 to sum up\nEnter 3 to subtract\nEnter 4 to multiply\nEnter 5 to divide\n";
     std::cin >> x;
-    while(!std::cin.good())
+    while(std::cin.fail() == 1)
     {
-      std::cin.clear();
-      std::cin.sync();
-      std::cout << "ERROR: Invalid data type\nEnter option again: ";
-      std::cin >> x;
+        std::cin >> x;
+        std::cin.clear();
+        std::cin.sync();
+        std::cout << "ERROR: Invalid data type\nEnter option again: ";
+        std::cin >> x;
     }
     if(x == 1)
     {
@@ -52,7 +53,7 @@ int main()
     }
     std::cout << "Input second number: ";
     std::cin >> b;
-    while(!std::cin.good())
+    while(!std::cin.fail() == 1)
     {
       std::cin.clear();
       std::cin.sync();
@@ -62,18 +63,18 @@ int main()
     switch(x)
     {
       case 2:
-        add(a, b);
+        std::cout << add(a, b);
         break;
       case 3:
-        subtract(a, b);
+        std::cout << subtract(a, b);
         break;
       case 4:
-        multiply(a, b);
+        std::cout << multiply(a, b);
         break;
       case 5:
-        divide(a, b);
+        std::cout << divide(a, b);
         break;
     }
-  }
+  //}
   return 0;
 }
