@@ -25,7 +25,7 @@ int main()
 {
   std::string x = "";
   float a = 0, b = 0;
-  std::cout << "Welcome to my first calculator!\n"
+  std::cout << "Welcome to my first calculator!\n";
   while(true)
   {
     std::cout << "Enter 1 to end program\nEnter 2 to sum up\nEnter 3 to subtract\nEnter 4 to multiply\nEnter 5 to divide\n";
