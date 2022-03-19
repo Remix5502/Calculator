@@ -23,7 +23,7 @@ float divide(float a, float b)
 
 int main()
 {
-  string x = "";
+  std::string x = "";
   float a = 0, b = 0;
   std::cout << "Welcome to my first calculator!\n"
   while(true)
