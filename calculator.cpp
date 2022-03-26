@@ -26,11 +26,11 @@ int main()
   int x = 0, y = 0;
   float a = 0, b = 0;
   std::cout << "Welcome to my first calculator!\n\n";
-  //while(true)
-  //{
+  while(true)
+  {
     std::cout << "Enter 1 to end program\nEnter 2 to sum up\nEnter 3 to subtract\nEnter 4 to multiply\nEnter 5 to divide\n";
     std::cin >> x;
-    while(std::cin.fail() == 1)
+    while(std::cin.good() == 0)
     {
         std::cin >> x;
         std::cin.clear();
@@ -40,11 +40,12 @@ int main()
     }
     if(x == 1)
     {
+      break;
       return 0;
     }
     std::cout << "Input first number: ";
     std::cin >> a;
-    while(!std::cin.good())
+    while(!std::cin.good() == 0)
     {
       std::cin.clear();
       std::cin.sync();
@@ -53,7 +54,7 @@ int main()
     }
     std::cout << "Input second number: ";
     std::cin >> b;
-    while(!std::cin.fail() == 1)
+    while(!std::cin.good() == 0)
     {
       std::cin.clear();
       std::cin.sync();
@@ -75,6 +76,6 @@ int main()
         std::cout << divide(a, b);
         break;
     }
-  //}
+  }
   return 0;
 }
